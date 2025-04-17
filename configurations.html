@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Configurations Module - Bookkeeping System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    <h2><i class="label1"> Modules</i></h2>
+    <a href="index.html"><i class="fas fa-home"></i><span class="label"> Home</span></a>
+    <a href="sales.html"><i class="fas fa-tags"></i><span class="label"> Sales</span></a>
+    <a href="receipts.html"><i class="fas fa-file-invoice"></i><span class="label"> Receipts</span></a>
+    <a href="purchases.html"><i class="fas fa-wallet"></i><span class="label"> Purchases</span></a>
+    <a href="disbursements.html"><i class="fas fa-clipboard-list"></i><span class="label"> Disbursements</span></a>
+    <a href="adjustments.html"><i class="fas fa-user-friends"></i><span class="label"> Adjustments</span></a>
+    <a href="reports.html"><i class="fas fa-database"></i><span class="label"> Reports</span></a>
+    <a href="account.html"><i class="fas fa-lock"></i><span class="label"> Account</span></a>
+    <a href="configurations.html" class="active"><i class="fas fa-cogs"></i><span class="label"> Configurations</span></a>
+  </div>
+
+  <div class="main-content" id="main-content">
+    <header>
+      <div class="logo">Configurations Module</div>
+      <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      </nav>
+    </header>
+
+    <section class="section">
+      <h2 style="font-size: 2rem; margin-bottom: 2rem;">System Settings</h2>
+
+      <div class="card" style="max-width: 600px; margin: auto;">
+        <form>
+          <label for="currency">Default Currency</label>
+          <select id="currency" style="padding: 0.5rem; width: 100%; margin-bottom: 1rem;">
+            <option value="usd">USD - US Dollar</option>
+            <option value="eur">EUR - Euro</option>
+            <option value="php">PHP - Philippine Peso</option>
+          </select>
+
+          <label for="timezone">Time Zone</label>
+          <select id="timezone" style="padding: 0.5rem; width: 100%; margin-bottom: 1rem;">
+            <option value="UTC">UTC</option>
+            <option value="Asia/Manila">Asia/Manila</option>
+            <option value="America/New_York">America/New_York</option>
+          </select>
+
+          <label for="language">Language</label>
+          <select id="language" style="padding: 0.5rem; width: 100%; margin-bottom: 1rem;">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fil">Filipino</option>
+          </select>
+
+          <button type="submit" style="padding: 0.75rem 1.5rem; background-color: #3b82f6; color: white; border: none; border-radius: 0.5rem; cursor: pointer;">
+            Save Settings
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Bookkeeping System. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('collapsed');
+      document.getElementById('main-content').classList.toggle('collapsed');
+    }
+  </script>
+
+<div class="mobile-overlay" id="mobile-overlay" onclick="closeSidebar()"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

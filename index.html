@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookkeeping System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    <h2><i class="label1"> Modules</i></h2>
+    <a href="index.html" class="active"><i class="fas fa-home"></i><span class="label"> Home</span></a>
+    <a href="sales.html"><i class="fas fa-tags"></i><span class="label"> Sales</span></a>
+    <a href="receipts.html"><i class="fas fa-file-invoice"></i><span class="label"> Receipts</span></a>
+    <a href="purchases.html"><i class="fas fa-wallet"></i><span class="label"> Purchases</span></a>
+    <a href="disbursements.html"><i class="fas fa-clipboard-list"></i><span class="label"> Disbursements</span></a>
+    <a href="adjustments.html"><i class="fas fa-user-friends"></i><span class="label"> Adjustments</span></a>
+    <a href="reports.html"><i class="fas fa-database"></i><span class="label"> Reports</span></a>
+    <a href="account.html"><i class="fas fa-lock"></i><span class="label"> Account</span></a>
+    <a href="configurations.html"><i class="fas fa-cogs"></i><span class="label"> Configurations</span></a>
+  </div>
+
+  <div class="main-content" id="main-content">
+    <header>
+      <div class="logo">Bookkeeping System</div>
+    <!--  <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>  -->
+    </header>
+
+    <section class="hero">
+      <h1 class = "Welcome">Welcome to Bookkeeping System</h1>
+      <p>Where your transactions are secured and stored privately!</p>
+    </section>
+
+    <section class="section" id="services">
+      <h2 style="font-size: 2rem; margin-bottom: 2rem; text-align:center;">Our Services</h2>
+      <div class="card-container">
+        <div class="card">
+          <h3>Web Development</h3>
+          <p>Modern websites built with performance and design in mind.</p>
+        </div>
+        <div class="card">
+          <h3>UI/UX Design</h3>
+          <p>Creating intuitive and user-friendly interfaces that engage users.</p>
+        </div>
+        <div class="card">
+          <h3>SEO Optimization</h3>
+          <p>Helping you rank higher on search engines and reach more people.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Bookkeeping System. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('collapsed');
+      document.getElementById('main-content').classList.toggle('collapsed');
+    }
+  </script>
+
+<div class="mobile-overlay" id="mobile-overlay" onclick="closeSidebar()"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
