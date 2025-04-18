@@ -1,26 +1,26 @@
 <?php
-require 'db_connect.php';
+require_once 'db.php';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $customer = $_POST["customer_name"];
-    $item = $_POST["item_description"];
-    $amount = $_POST["amount"];
-    $date = $_POST["date"];
+// Get JSON input
+$data = json_decode(file_get_contents("php://input"));
 
-    try {
-        $stmt = $pdo->prepare("INSERT INTO sales (customer_name, item_description, amount, date) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$customer, $item, $amount, $date]);
+if (!$data) {
+    echo json_encode(['success' => false, 'error' => 'Invalid input']);
+    exit;
+}
 
-        // After successful insert, show a JS alert
-        echo "<script>
-                alert('Sale record added successfully!');
-                window.location.href = 'sales.html'; // Redirect back to form
-              </script>";
-    } catch (PDOException $e) {
-        echo "<script>
-                alert('Error adding record: " . $e->getMessage() . "');
-                window.history.back();
-              </script>";
-    }
+$date = date('Y-m-d');
+$received_from = $data->received_from;
+$or_number = $data->or_number;
+$purpose = $data->purpose;
+$amount = $data->amount;
+$created_at = date('Y-m-d H:i:s');
+
+try {
+    $stmt = $pdo->prepare("INSERT INTO reseipts (date, received_from, or_number, purpose, amount, created_at) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->execute([$date, $received_from, $or_number, $purpose, $amount, $created_at]);
+    echo json_encode(['success' => true]);
+} catch (PDOException $e) {
+    echo json_encode(['success' => false, 'error' => $e->getMessage()]);
 }
 ?>
