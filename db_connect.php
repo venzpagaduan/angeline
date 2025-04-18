@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';
-$db = 'bookkeeping_system';
-$user = 'root';
-$pass = ''; // Leave blank for XAMPP default
+$host = 'sql12.freesqldatabase.com';
+$db = 'sql12773707';
+$user = 'sql12773707';
+$pass = 'cCsEigKhzd'; // Leave blank for XAMPP default
 $charset = 'utf8mb4';
 
 try {
